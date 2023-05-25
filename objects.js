@@ -6,28 +6,27 @@ export class Animal{
         this._edad=edad;
     }
     hacerSonido(){
+        let inner = document.querySelector(".alert");
         if(this._nombre==='perro'){
-            console.log('bark bark');
+            inner.insertAdjacentHTML("beforeend", `<strong>bark bark</strong><br>`);
         }
         else if(this._nombre==='gato'){
-            console.log('miau miau')
+            inner.insertAdjacentHTML("beforeend", `<strong>miau miau</strong><br>`);
         }
         else if(this._nombre==='raton'){
-            console.log('raz raz raz')
+            inner.insertAdjacentHTML("beforeend", `<strong>raz raz raz</strong><br>`);
         }
         else if(this._nombre==='ballena'){
-            console.log('walleeee')
+            inner.insertAdjacentHTML("beforeend", `<strong>walleeee</strong><br>`);
         }
         else if(this._nombre==='vaca'){
-            console.log('muuuu')
+            inner.insertAdjacentHTML("beforeend", `<strong>muuuu</strong><br>`);
         }
         else if(this._nombre==='pollo'){
-            console.log('cua cua cua')
+            inner.insertAdjacentHTML("beforeend", `<strong>pio pio pio</strong><br>`);
         }
     }
 }
-const animal1=new Animal('lucas',12);
-animal1.hacerSonido();
 
 export class Perro extends Animal{
     _raza
@@ -35,8 +34,9 @@ export class Perro extends Animal{
         super(nombre,edad);
         this._raza=raza;
     }
-    moverCola(laMueve){
-        console.log(laMueve ? 'El perro esta moviendo la cola' : 'El perro no esta moviendo la cola');
+    moverCola(){
+        let inner = document.querySelector(".alert");
+        inner.insertAdjacentHTML("beforeend", `<strong>${this._nombre} es un perro ${this._raza} y mueve la cola</strong><br>`);
     }
 }
 

@@ -35,3 +35,27 @@ buttonRol.addEventListener("change", (event)=>{
     }
 });
 
+formPerson.addEventListener("submit", function(event) {
+    event.preventDefault();
+    let data = new Array();
+    let formData = new FormData(formPerson);
+    let formDataObject = Object.fromEntries(formData);
+    for (let property in formDataObject) {
+        let value = formDataObject[property];
+        data.push(value);
+    }
+    card.innerHTML=`<div class="alert"></div>`
+    if(buttonRol.value==='animal'){
+        const animal1 = new Animal(...data);
+        animal1.hacerSonido();
+        card.style.display = "flex";
+    }
+    else if(buttonRol.value==='perro'){
+        const perro1 = new Perro(...data);
+        perro1.moverCola();
+        card.style.display = "flex";
+    }else{
+        alert('debes escoger una opcion valida');
+    }
+});
+
